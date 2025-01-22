@@ -18,6 +18,11 @@ Para criar o diretório `foo` dentro de `challenges`, usei:
 
 mkdir challenges/foo
 
+## Desafio 5 (I)
+Para criar todas as subpastas `foo/bar/1/2/3` dentro de `challenges`, usei:
+mkdir -p challenges/foo/barr/1/2/3
+
+
 
 
 
