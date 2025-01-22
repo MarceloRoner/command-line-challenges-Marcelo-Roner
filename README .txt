@@ -23,6 +23,10 @@ Para criar todas as subpastas `foo/bar/1/2/3` dentro de `challenges`, usei:
 mkdir -p challenges/foo/barr/1/2/3
 
 
+##Desafio 6 (B)
+Para remover o diretório foo e todo o seu conteúdo, utilizei o comando:
+
+rm -rf challenges/foo
 
 
 
