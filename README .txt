@@ -28,5 +28,11 @@ Para remover o diretório foo e todo o seu conteúdo, utilizei o comando:
 
 rm -rf challenges/foo
 
+##Desafio 7 (B)
+Para imprimir o texto "Olá, Mundo", usei o comando:
+echo "Olá, Mundo"
+
+
+
 
 
