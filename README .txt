@@ -13,6 +13,11 @@ Para listar o conteúdo do diretório `challenges`, usei:
 
 ls challenges/
 
+## Desafio 4 (B)
+Para criar o diretório `foo` dentro de `challenges`, usei:
+
+mkdir challenges/foo
+
 
 
 
