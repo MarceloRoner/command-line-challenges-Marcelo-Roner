@@ -8,6 +8,11 @@ Para entrar no diretório `challenges/`, utilizei o comando:
 cd challenges
 
 
-continua...
+## Desafio 3 (B)
+Para listar o conteúdo do diretório `challenges`, usei:
+
+ls challenges/
+
+
 
 
