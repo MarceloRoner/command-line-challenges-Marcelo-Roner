@@ -169,4 +169,110 @@ Desafio 38 (A)
 Para contar o número de sobrenomes exclusivos no arquivo people.csv, utilizei:
 cut -d ',' -f 2 people.csv | sort | uniq | wc -l
 
+Desafio 39 (A)
+Você acidentalmente contou o cabeçalho CSV no desafio anterior? Para corrigir isso, utilizei:
+
+
+tail -n +2 people.csv | cut -d ',' -f 2 | sort | uniq | wc -l
+Explicação:
+
+tail -n +2: Ignora a primeira linha (cabeçalho) do arquivo CSV.
+O restante do comando é igual ao Desafio 38.
+Desafio 40 (A)
+Há uma segunda maneira de excluir o cabeçalho CSV da sua contagem. Encontrei-a usando:
+
+
+cut -d ',' -f 2 people.csv | tail -n +2 | sort | uniq | wc -l
+Explicação:
+
+tail -n +2: Remove a primeira linha após extrair os sobrenomes.
+Desafio 41 (A)
+Para provar se um método é mais eficiente (mais rápido) que o outro, usei o comando time para medir o tempo de execução de cada abordagem:
+
+
+time tail -n +2 people.csv | cut -d ',' -f 2 | sort | uniq | wc -l
+time cut -d ',' -f 2 people.csv | tail -n +2 | sort | uniq | wc -l
+O comando time exibe o tempo real, do usuário e do sistema para cada execução.
+
+Desafio 42 (A)
+Para contar o número de pessoas com o primeiro nome "Josias" em people.csv, utilizei:
+
+
+grep -i '^Josias,' people.csv | wc -l
+Explicação:
+
+grep -i '^Josias,': Procura por linhas que começam com "Josias" (ignorando maiúsculas/minúsculas).
+wc -l: Conta o número de linhas correspondentes.
+Desafio 43 (I)
+Para contar o número de arquivos (não diretórios) no diretório challenges, utilizei:
+
+
+find challenges/ -type f | wc -l
+Explicação:
+
+find challenges/ -type f: Encontra todos os arquivos no diretório challenges.
+wc -l: Conta o número de resultados.
+Desafio 44 (I)
+Para contar o número de subdiretórios no diretório desafios, utilizei:
+
+find desafios/ -type d | wc -l
+Explicação:
+
+find desafios/ -type d: Encontra todos os diretórios no diretório desafios.
+wc -l: Conta o número de resultados.
+Desafio 45 (I)
+Para remover todos os arquivos com "deleteme" no nome, utilizei:
+
+find . -name "*deleteme*" -exec rm {} \;
+Explicação:
+
+find . -name "*deleteme*": Localiza todos os arquivos com "deleteme" no nome.
+-exec rm {} \;: Remove cada arquivo encontrado.
+Desafio 46 (I)
+No Desafio 28, encontrei o arquivo que continha a string "Você encontrou a agulha no palheiro!". Para substituir essa string por "A agulha foi removida.", utilizei:
+
+
+sed -i 's/Você encontrou a agulha no palheiro!/A agulha foi removida./g' $(grep -Rl "Você encontrou a agulha no palheiro!" bunch_of_files/)
+Explicação:
+
+grep -Rl: Encontra o arquivo contendo a string.
+sed -i: Substitui a string no arquivo encontrado.
+Desafio 47 (A)
+Para transformar people.csv de delimitado por , para delimitado por | e salvar o resultado em people_pipe.csv, utilizei:
+
+
+awk -F',' '{OFS="|"; print $1, $2, $3}' people.csv > people_pipe.csv
+Explicação:
+
+-F',': Define a vírgula como delimitador de entrada.
+OFS="|": Define o caractere | como delimitador de saída.
+print $1, $2, $3: Imprime as colunas separadas por |.
+Desafio 48 (A)
+Para encontrar todos os arquivos em bunch_of_files/ que são duplicados de file001.rand, utilizei:
+
+md5sum bunch_of_files/file001.rand | awk '{print $1}' > checksum.txt
+find bunch_of_files/ -type f -exec md5sum {} \; | grep -f checksum.txt
+Explicação:
+
+md5sum: Calcula o hash MD5 do arquivo.
+find e grep: Comparam o hash de outros arquivos com o hash de file001.rand.
+Desafio 49 (A)
+Executei este desafio em exatamente 2 passos:
+
+Criar um arquivo vazio chamado supercalifragilisticexpialidocious.txt:
+
+touch supercalifragilisticexpialidocious.txt
+Remover o arquivo criado, usando no máximo 5 caracteres:
+
+rm s*
+Desafio 50 (A)
+Para criar um conjunto de arquivos vazios com nomes no formato LN.txt (onde L é uma letra e N é um número), utilizei:
+
+
+touch {a,b,c}{1,2,3}.txt
+Explicação:
+
+{a,b,c}: Gera as letras a, b e c.
+{1,2,3}: Gera os números 1, 2 e 3.
+Combinações geram 9 arquivos: a1.txt, a2.txt, ..., c3.txt.
 
