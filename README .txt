@@ -72,3 +72,60 @@ Para concatenar o conteúdo de hello.txt e hello_copy.txt em um novo arquivo cha
 cat hello.txt hello_copy.txt > 2_hellos.txt
 
 
+##Desafio 17 (B)
+Para obter o caminho completo do meu diretório de trabalho atual, usei o comando:
+
+pwd
+
+
+##Desafio 18 (B)
+
+Para listar o conteúdo do diretório desafios e mostrar as permissões para cada arquivo, usei:
+ls -l desafios/
+
+Desafio 19 (B)
+Para acrescentar texto ao final de restricted.txt, usei os seguintes comandos em duas etapas:
+
+echo "Texto adicional" >> restricted.txt
+
+##Desafio 20 (B)
+Para executar o programa hello_executable, utilizei:
+
+./hello_executable
+
+##Desafio 21 (B)
+Para executar o programa challenge_20, usei dois passos:
+
+chmod +x challenge_20  # Torna o arquivo executável, caso necessário
+./challenge_20
+
+##Desafio 22 (B)
+Para compilar e executar compile_me.c, segui estas etapas:
+
+gcc compile_me.c -o compile_me
+./compile_me
+
+##Desafio 23 (A)
+Para executar o programa redirect e coletar sua saída em output.txt, usei:
+
+./redirect > output.txt
+
+##Desafio 24 (B)
+Para obter a data e a hora atuais, utilizei:
+date
+
+##Desafio 25 (B)
+Para mostrar todos os processos em execução no meu computador, usei:
+ps aux
+
+##Desafio 26 (B)
+Para exibir o número de processadores/núcleos disponíveis, utilizei:
+
+nproc
+
+Ou, alternativamente:
+cat /proc/cpuinfo | grep -c processor
+
+##Desafio 27 (B)
+Para descobrir a versão do kernel Linux em execução, utilizei:
+uname -r
