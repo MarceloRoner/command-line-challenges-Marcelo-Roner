@@ -1,1 +1,3 @@
 This file is restricted. You may not write to it.
+Este é um novo texto no arquivo.
+Mais um texto adicionado.
