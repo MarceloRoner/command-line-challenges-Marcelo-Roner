@@ -129,3 +129,44 @@ cat /proc/cpuinfo | grep -c processor
 ##Desafio 27 (B)
 Para descobrir a versão do kernel Linux em execução, utilizei:
 uname -r
+
+## Desafio 28 (B)
+Para encontrar o arquivo dentro do diretório `bunch_of_files/` que contém a string `"Você encontrou a agulha no palheiro!"`, usei o seguinte comando:
+grep -Rl "Você encontrou a agulha no palheiro!" bunch_of_files/
+
+Desafio 29 (B)
+Para imprimir as primeiras 25 linhas do arquivo people.csv, utilizei:
+head -n 25 people.csv
+Desafio 30 (B)
+Para imprimir as últimas 25 linhas do arquivo people.csv, utilizei:
+
+tail -n 25 people.csv
+Desafio 31 (I)
+Para exibir apenas as diferenças entre os arquivos greeting1.txt e greeting2.txt, utilizei:
+
+diff greeting1.txt greeting2.txt
+Desafio 32 (I)
+Para imprimir "Olá", aguardar 5 segundos e depois imprimir "mundo!", utilizei:
+echo "Olá" && sleep 5 && echo "mundo!"
+
+Desafio 33 (I)
+Para criar um arquivo de 1 MB cheio de zeros, utilizei:
+Desafio 34 (I)
+Para criar um arquivo de 2 MB cheio de dados aleatórios, utilizei:
+dd if=/dev/urandom of=arquivo2mb.bin bs=1M count=2
+Desafio 35 (I)
+Para contar o número de linhas no arquivo README.txt, utilizei:
+wc -l README.txt
+Desafio 36 (B)
+Para exibir o conteúdo do README.txt ao contrário (última linha primeiro), utilizei:
+
+tac README.txt
+Desafio 37 (I)
+Para exibir todos os sobrenomes contidos no arquivo people.csv, utilizei:
+
+cut -d ',' -f 2 people.csv
+Desafio 38 (A)
+Para contar o número de sobrenomes exclusivos no arquivo people.csv, utilizei:
+cut -d ',' -f 2 people.csv | sort | uniq | wc -l
+
+
